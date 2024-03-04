@@ -1,0 +1,39 @@
+#include <stdio.h>
+
+// Function to initialize the Playfair matrix
+void initializePlayfairMatrix(char playfairMatrix[5][5]) {
+    char key[] = "MFHIJKUNOPQZVWXYELARGDSTBC"; // The key used to fill the matrix
+    int row, col, index = 0;
+
+    // Fill the matrix with characters from the key
+    for (row = 0; row < 5; row++) {
+        for (col = 0; col < 5; col++) {
+            playfairMatrix[row][col] = key[index++];
+        }
+    }
+}
+
+// Function to print the Playfair matrix
+void printPlayfairMatrix(char playfairMatrix[5][5]) {
+    int row, col;
+
+    printf("Playfair Matrix:\n");
+    for (row = 0; row < 5; row++) {
+        for (col = 0; col < 5; col++) {
+            printf("%c ", playfairMatrix[row][col]);
+        }
+        printf("\n");
+    }
+}
+
+int main() {
+    char playfairMatrix[5][5];
+
+    // Initialize the Playfair matrix
+    initializePlayfairMatrix(playfairMatrix);
+
+    // Print the Playfair matrix
+    printPlayfairMatrix(playfairMatrix);
+
+    return 0;
+}
